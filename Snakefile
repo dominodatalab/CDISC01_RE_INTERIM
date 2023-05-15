@@ -2,7 +2,7 @@ from domino import Domino
 from os.path import splitext
 
 domino = Domino(
-    "megan_harries/CDISC01_RE_INTERIM"
+    "dominodatalab/CDISC01_RE_INTERIM"
 )
 
 def blocking_job(path):
