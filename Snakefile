@@ -1,8 +1,9 @@
 from domino import Domino
+from os import environ
 from os.path import splitext
 
 domino = Domino(
-    "dominodatalab/CDISC01_RE_INTERIM"
+    f"{environ['DOMINO_PROJECT_OWNER']}/{environ['DOMINO_PROJECT_NAME']}"
 )
 
 def blocking_job(path):
