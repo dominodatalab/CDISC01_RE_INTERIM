@@ -31,11 +31,8 @@ rule all:
         "/mnt/data/ADAM/adsl.sas7bdat",
         "/mnt/data/ADAM/advs.sas7bdat",
         "/mnt/data/TFL/t_ae_rel.sas7bdat",
-        "/mnt/artifacts/results/t_ae_rel.pdf",
         "/mnt/data/TFL/t_pop.sas7bdat",
-        "/mnt/artifacts/results/t_pop.pdf",
         "/mnt/data/TFL/t_vscat.sas7bdat",
-        "/mnt/artifacts/results/t_vscat.pdf",
         
 
 rule ADAE:
