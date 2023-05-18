@@ -26,9 +26,14 @@
 * ----------------------------------------------------------------------------
 \*****************************************************************************/
 
+proc printto
+	log = "/mnt/artifacts/results/metadata.sas";
+run;
+
 proc import out = metadata.tfl
 			datafile = "/mnt/pvc-rev4-nfs/TFL_Metadata.xlsx"
 			dbms = xlsx replace;
 	sheet = "Display";
 	getnames = YES;
 run;
+
