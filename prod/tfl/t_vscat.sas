@@ -17,7 +17,7 @@
 * Output files: t_vscat.pdf
 *				t_vscat.sas7bdat
 *               
-* Macros:       None
+* Macros:       tfl_metadata.sas
 *         
 * Assumptions: 
 *
@@ -336,9 +336,12 @@ data add_param_results_stat;
         else if _NAME_ in ("results", "results_l", "results_h") then stat = "n (%) e";
 run;
 
+*include metadata;
+%tfl_metadata;
+
 ** create the table output;
 
-ods pdf file = "/mnt/artifacts/results/t_vscat.pdf"
+ods pdf file = "/mnt/artifacts/results/&__prog_name..pdf"
         style = newstyle;
         
 ods noproctitle;
@@ -346,12 +349,12 @@ ods escapechar = "^";
 
 ** add titles to output;
 title1 justify = left "Domino" justify = right "Page ^{thispage} of ^{lastpage}";
-title2 "Table 14.3.4.3";
-title3 "Post-baseline Vital Signs Meeting Criteria of Interest";
-title4 "Analysis Set";
+title2 "&DisplayName.";
+title3 "&DisplayTitle.";
+title4 "&Title1.";
 
 ** justify contents to decimal places;
-proc report data = add_param_results_stat headline split = "*" style(report) = {width = 100% cellpadding = 3} out = tfl.t_vscat;
+proc report data = add_param_results_stat headline split = "*" style(report) = {width = 100% cellpadding = 3} out = tfl.&__prog_name.;
         column  (order1 order2 param_results stat placebo low_dose high_dose);
         
         ** order variables;
@@ -370,9 +373,9 @@ proc report data = add_param_results_stat headline split = "*" style(report) = {
         endcomp;
         
         ** add footnotes describing the critical codes;
-        footnote1 justify = left "Note: e = number of event; n = number of unique subjects with the event.";
-        footnote2 justify = left "Note: percentages are based on the number of patients with post-baseline results for the parameter in question.";
-        footnote3 justify = left "Dataset(s): ADVS; Program: t_vscat.sas; Output: t_vscat.pdf; Generated on: &sysdate9 &systime";
+        footnote1 justify = left "&Footer1.";
+        footnote2 justify = left "&Footer2.";
+        footnote3 justify = left "&Footer3.";
 run;
     
 ods pdf close;
