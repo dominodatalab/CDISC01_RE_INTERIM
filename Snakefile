@@ -33,7 +33,19 @@ rule all:
         "/mnt/data/TFL/t_ae_rel.sas7bdat",
         "/mnt/data/TFL/t_pop.sas7bdat",
         "/mnt/data/TFL/t_vscat.sas7bdat",
+        "/mnt/data/METADATA/tfl.sas7bdat"
         
+rule metadata:
+    input:
+        "/mnt/code/import_metadata.sas",
+        "/mnt/pvc-rev4-nfs/TFL_Metadata.xlsx"
+    output:
+        "/mnt/data/METADATA/tfl.sas7bdat"
+    log:
+        "/mnt/artifacts/metadata.log"
+    run:
+        run = blocking_job(input[0])
+        print(run)
 
 rule ADAE:
     input:
@@ -116,6 +128,7 @@ rule ADVS:
 rule t_ae_rel:
     input:
         "/mnt/code/prod/tfl/t_ae_rel.sas",
+        "/mnt/data/METADATA/tfl.sas7bdat",
         "/mnt/data/ADAM/adsl.sas7bdat",
         "/mnt/data/ADAM/adae.sas7bdat"
     output:
@@ -129,6 +142,7 @@ rule t_ae_rel:
 rule t_pop:
     input:
         "/mnt/code/prod/tfl/t_pop.sas",
+        "/mnt/data/METADATA/tfl.sas7bdat",
         "/mnt/data/ADAM/adsl.sas7bdat"
     output:
         "/mnt/data/TFL/t_pop.sas7bdat"
@@ -141,6 +155,7 @@ rule t_pop:
 rule t_vscat:
     input:
         "/mnt/code/prod/tfl/t_vscat.sas",
+        "/mnt/data/METADATA/tfl.sas7bdat",
         "/mnt/data/ADAM/advs.sas7bdat"
     output:
         "/mnt/data/TFL/t_vscat.sas7bdat"
