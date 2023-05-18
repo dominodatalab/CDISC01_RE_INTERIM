@@ -26,9 +26,8 @@
 * ----------------------------------------------------------------------------
 \*****************************************************************************/
 
-proc printto
-	log = "/mnt/artifacts/results/metadata.sas";
-run;
+%include "/mnt/code/domino.sas";
+
 
 proc import out = metadata.tfl
 			datafile = "/mnt/pvc-rev4-nfs/TFL_Metadata.xlsx"
