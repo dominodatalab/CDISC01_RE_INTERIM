@@ -17,7 +17,7 @@
 * Output files: t_pop.pdf
 *				t_pop.sas7bdat
 *               
-* Macros:       None
+* Macros:       tfl_metadata.sas
 *         
 * Assumptions: 
 *
@@ -260,9 +260,9 @@ proc report data = order_results headline split = "*" style(report) = {width = 1
         define high_dose / "Xanomeline High Dose* (N=%cmpres(&high_dose_n))" style(column) = {just = d width = 20%};
         
         ** add footnotes describing the critical codes;
-        footnote1 justify = left "&Footer1";
-        footnote2 justify = left "&Footer2";
-        footnote3 justify = left "Dataset(s): ADSL; Program: t_pop.sas; Output: t_pop.pdf; Generated on: &sysdate9 &systime";
+        footnote1 justify = left "&Footer1.";
+        footnote2 justify = left "&Footer2.";
+        footnote3 justify = left "&Footer3.";
 run;
     
 ods pdf close;
