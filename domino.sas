@@ -49,6 +49,7 @@
 *  2022-10-20  | Stuart.Malcolm  | support ADAM/TFL combined projects
 *  2023-05-09  | Tom.Ratford     | Support new project structure
 *  2023-05-09  | Tom.Ratford     | Output log in batch
+*  2023-05-18  | Megan.Harries   | Include metadata libname for RE Interim
 * ----------------------------------------------------------------------------
 *  YYYYMMDD  |  username        | ..description of change..         
 *****************************************************************************/
@@ -158,6 +159,8 @@
   * local read/write for TFL datasets ;
   libname TFL   "&__localdata_path./TFL";
   libname TFLQC "&__localdata_path./TFLQC";
+  * Metadata;
+  libname METADATA "&__localdata_path./METADATA";
 %end;
  
 * ==================================================================;
