@@ -229,6 +229,9 @@ data order_results(rename = (Xanomeline_Low_Dose = Low_Dose Xanomeline_High_Dose
 	else if agegroup = "results6" then ageresults = "80 years and older";
 run;
 
+*include metadata;
+%tfl_metadata;
+
 ** create the table output;
 
 ods pdf file = "/mnt/artifacts/results/t_pop.pdf"
@@ -239,9 +242,9 @@ ods escapechar = "^";
 
 ** add titles to output;
 title1 justify = left "Domino" justify = right "Page ^{thispage} of ^{lastpage}";
-title2 "Table 14.3.4.1";
-title3 "Summary of Age for each Treatment";
-title4 "Analysis Set";
+title2 "&DisplayName.";
+title3 "&DisplayTitle.";
+title4 "&Title1.";
 
 ** justify contents to decimal places;
 proc report data = order_results headline split = "*" style(report) = {width = 100% cellpadding = 3} out = tfl.t_pop;
@@ -257,8 +260,8 @@ proc report data = order_results headline split = "*" style(report) = {width = 1
         define high_dose / "Xanomeline High Dose* (N=%cmpres(&high_dose_n))" style(column) = {just = d width = 20%};
         
         ** add footnotes describing the critical codes;
-        footnote1 justify = left "Note: n = number of unique subjects in age group.";
-        footnote2 justify = left "Note: percentages are based on the number of patients for each treatment.";
+        footnote1 justify = left "&Footer1";
+        footnote2 justify = left "&Footer2";
         footnote3 justify = left "Dataset(s): ADSL; Program: t_pop.sas; Output: t_pop.pdf; Generated on: &sysdate9 &systime";
 run;
     
