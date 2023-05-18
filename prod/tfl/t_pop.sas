@@ -234,7 +234,7 @@ run;
 
 ** create the table output;
 
-ods pdf file = "/mnt/artifacts/results/t_pop.pdf"
+ods pdf file = "/mnt/artifacts/results/&__prog_name..pdf"
 		style = newstyle;
         
 ods noproctitle;
@@ -247,7 +247,7 @@ title3 "&DisplayTitle.";
 title4 "&Title1.";
 
 ** justify contents to decimal places;
-proc report data = order_results headline split = "*" style(report) = {width = 100% cellpadding = 3} out = tfl.t_pop;
+proc report data = order_results headline split = "*" style(report) = {width = 100% cellpadding = 3} out = tfl.&__prog_name.;
         column  (order1 ageresults stat placebo low_dose high_dose);
         
         ** order variables;
