@@ -12,7 +12,7 @@
 * ____________________________________________________________________________
 * DESCRIPTION                                                    
 *                                                                   
-* Input files: metadata.tfl
+* Input files: metadata.{__prog_name}
 *              
 * Output files: 
 *               
@@ -28,8 +28,7 @@
 
 %macro tfl_metadata();
 	data metadata;
-		set metadata.tfl;
-		where DisplayTemplate = "&__prog_name..&__prog_ext.";
+		set metadata.&__prog_name.;
 	run;
 
 	** create macro variables for all variable names;
