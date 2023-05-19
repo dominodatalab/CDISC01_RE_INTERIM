@@ -33,14 +33,18 @@ rule all:
         "/mnt/data/TFL/t_ae_rel.sas7bdat",
         "/mnt/data/TFL/t_pop.sas7bdat",
         "/mnt/data/TFL/t_vscat.sas7bdat",
-        "/mnt/data/METADATA/tfl.sas7bdat"
+        "/mnt/data/METADATA/t_ae_rel.sas7bdat",
+        "/mnt/data/METADATA/t_pop.sas7bdat",
+        "/mnt/data/METADATA/t_vscat.sas7bdat"
         
 rule metadata:
     input:
         "/mnt/code/import_metadata.sas",
         "/mnt/pvc-rev4-nfs/TFL_Metadata.xlsx"
     output:
-        "/mnt/data/METADATA/tfl.sas7bdat"
+        "/mnt/data/METADATA/t_ae_rel.sas7bdat",
+        "/mnt/data/METADATA/t_pop.sas7bdat",
+        "/mnt/data/METADATA/t_vscat.sas7bdat"
     log:
         "/mnt/artifacts/metadata.log"
     run:
