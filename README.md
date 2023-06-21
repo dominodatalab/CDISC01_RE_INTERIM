@@ -1,6 +1,5 @@
-# Template Reporting Effort repository
-
-This repo contains the folder structure to template a reporting effort making ADaM and TFL code for the Domino clinical trial demo
+# Study CDISC01 interim reporting effort repo
+This repo contains the ADaM and TFL code for the CDISC01 protocol interim reporting effort.
 
 # Directory structure
 
