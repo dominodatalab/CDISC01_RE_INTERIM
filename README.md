@@ -1,4 +1,4 @@
-# Study CDISC01 interim reporting effort repo
+# Protocol CDISC01 interim reporting effort repo
 This repo contains the ADaM and TFL code for the CDISC01 protocol interim reporting effort.
 
 # Directory structure
