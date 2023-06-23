@@ -16,7 +16,7 @@ def blocking_job(path):
         environment_id=environments[file_ext]
     )
 
-report: "/mnt/data/CDISC01_RE_INTERIM/snakemake.rst"
+report: "/mnt/artifacts/snakemake.rst"
 
 envvars:
     "DOMINO_USER_API_KEY",
@@ -46,7 +46,7 @@ rule metadata:
         "/mnt/data/METADATA/t_pop.sas7bdat",
         "/mnt/data/METADATA/t_vscat.sas7bdat"
     log:
-        "/mnt/artifacts/metadata.log"
+        "/mnt/artifacts/sas_logs/metadata.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -60,7 +60,7 @@ rule ADAE:
     output:
         "/mnt/data/ADAM/adae.sas7bdat"
     log:
-        "/mnt/artifacts/ADAE.log"
+        "/mnt/artifacts/sas_logs/ADAE.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -73,7 +73,7 @@ rule ADCM:
     output:
         "/mnt/data/ADAM/adcm.sas7bdat"
     log:
-        "/mnt/artifacts/ADCM.log"
+        "/mnt/artifacts/sas_logs/ADCM.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -86,7 +86,7 @@ rule ADLB:
     output:
         "/mnt/data/ADAM/adlb.sas7bdat"
     log:
-        "/mnt/artifacts/ADLB.log"
+        "/mnt/artifacts/sas_logs/ADLB.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -99,7 +99,7 @@ rule ADMH:
     output:
         "/mnt/data/ADAM/admh.sas7bdat"
     log:
-        "/mnt/artifacts/ADMH.log"
+        "/mnt/artifacts/sas_logs/ADMH.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -111,7 +111,7 @@ rule ADSL:
     output:
         "/mnt/data/ADAM/adsl.sas7bdat"
     log:
-        "/mnt/artifacts/ADSL.log"
+        "/mnt/artifacts/sas_logs/ADSL.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -124,7 +124,7 @@ rule ADVS:
     output:
         "/mnt/data/ADAM/advs.sas7bdat"
     log:
-        "/mnt/artifacts/ADVS.log"
+        "/mnt/artifacts/sas_logs/ADVS.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -138,7 +138,7 @@ rule t_ae_rel:
     output:
         "/mnt/data/TFL/t_ae_rel.sas7bdat"
     log:
-        "/mnt/artifacts/t_ae_rel.log"
+        "/mnt/artifacts/sas_logs/t_ae_rel.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -151,7 +151,7 @@ rule t_pop:
     output:
         "/mnt/data/TFL/t_pop.sas7bdat"
     log:
-        "/mnt/artifacts/t_pop.log"
+        "/mnt/artifacts/sas_logs/t_pop.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -164,7 +164,7 @@ rule t_vscat:
     output:
         "/mnt/data/TFL/t_vscat.sas7bdat"
     log:
-        "/mnt/artifacts/t_vscat.log"
+        "/mnt/artifacts/sas_logs/t_vscat.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -177,7 +177,7 @@ rule qc_ADAE:
         "/mnt/data/ADAM/adae.sas7bdat",
         "/mnt/data/ADAMQC/adsl.sas7bdat"
     log:
-        "/mnt/artifacts/qc_ADAE.log"
+        "/mnt/artifacts/sas_logs/qc_ADAE.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -189,7 +189,7 @@ rule qc_ADCM:
         "/mnt/data/ADAM/adcm.sas7bdat",
         "/mnt/data/ADAMQC/adsl.sas7bdat"
     log:
-        "/mnt/artifacts/qc_ADCM.log"
+        "/mnt/artifacts/sas_logs/qc_ADCM.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -201,7 +201,7 @@ rule qc_ADLB:
         "/mnt/data/ADAM/adlb.sas7bdat",
         "/mnt/data/ADAMQC/adsl.sas7bdat"
     log:
-        "/mnt/artifacts/qc_ADLB.log"
+        "/mnt/artifacts/sas_logs/qc_ADLB.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -213,7 +213,7 @@ rule qc_ADMH:
         "/mnt/data/ADAM/admh.sas7bdat",
         "/mnt/data/ADAMQC/adsl.sas7bdat"
     log:
-        "/mnt/artifacts/qc_ADMH.log"
+        "/mnt/artifacts/sas_logs/qc_ADMH.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -224,7 +224,7 @@ rule qc_ADSL:
         "/mnt/imported/data/snapshots/SDTMBLIND/JUNE212023/dm.sas7bdat",
         "/mnt/data/ADAM/adsl.sas7bdat"
     log:
-        "/mnt/artifacts/qc_ADSL.log"
+        "/mnt/artifacts/sas_logs/qc_ADSL.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -236,7 +236,7 @@ rule qc_ADVS:
         "/mnt/data/ADAM/advs.sas7bdat",
         "/mnt/data/ADAMQC/adsl.sas7bdat"
     log:
-        "/mnt/artifacts/qc_ADVS.log"
+        "/mnt/artifacts/sas_logs/qc_ADVS.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -247,7 +247,7 @@ rule qc_t_ae_rel:
         "/mnt/data/ADAM/adsl.sas7bdat",
         "/mnt/data/ADAM/adae.sas7bdat"
     log:
-        "/mnt/artifacts/qc_t_ae_rel.log"
+        "/mnt/artifacts/sas_logs/qc_t_ae_rel.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -257,7 +257,7 @@ rule qc_t_pop:
         "/mnt/code/qc/tfl/qc_t_pop.sas",
         "/mnt/data/ADAM/adsl.sas7bdat"
     log:
-        "/mnt/artifacts/qc_t_pop.log"
+        "/mnt/artifacts/sas_logs/qc_t_pop.log"
     run:
         run = blocking_job(input[0])
         print(run)
@@ -267,7 +267,7 @@ rule qc_t_vscat:
         "/mnt/code/qc/tfl/qc_t_vscat.sas",
         "/mnt/data/ADAM/advs.sas7bdat"
     log:
-        "/mnt/artifacts/qc_t_vscat.log"
+        "/mnt/artifacts/sas_logs/qc_t_vscat.log"
     run:
         run = blocking_job(input[0])
         print(run)
