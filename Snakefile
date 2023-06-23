@@ -8,7 +8,7 @@ domino = Domino(
 
 def blocking_job(path):
     environments = {
-        '.sas': "648ccec562f1f32f7ba1535d"
+        '.sas': "648cbe18da6816312f89981a"
     }
     file_name, file_ext = splitext(path)
     domino.job_start_blocking(
@@ -80,7 +80,7 @@ rule ADCM:
 
 rule ADLB:
     input:
-        "/mnt/code/prod/adam/ADLB.sas",
+        "/mnt/code/prod/adam/ADLB.sas",648cbe18da6816312f89981a
         "/mnt/imported/data/snapshots/SDTMBLIND/JUNE212023/lb.sas7bdat",
         "/mnt/data/ADAM/adsl.sas7bdat"
     output:
