@@ -33,23 +33,6 @@ rule all:
         "/mnt/data/TFL/t_ae_rel.sas7bdat",
         "/mnt/data/TFL/t_pop.sas7bdat",
         "/mnt/data/TFL/t_vscat.sas7bdat",
-        "/mnt/data/METADATA/t_ae_rel.sas7bdat",
-        "/mnt/data/METADATA/t_pop.sas7bdat",
-        "/mnt/data/METADATA/t_vscat.sas7bdat"
-        
-rule metadata:
-    input:
-        "/mnt/code/import_metadata.sas",
-        "/mnt/metadata-repository/TFL_Metadata.xlsx"
-    output:
-        "/mnt/data/METADATA/t_ae_rel.sas7bdat",
-        "/mnt/data/METADATA/t_pop.sas7bdat",
-        "/mnt/data/METADATA/t_vscat.sas7bdat"
-    log:
-        "/mnt/artifacts/sas_logs/metadata.log"
-    run:
-        run = blocking_job(input[0])
-        print(run)
 
 rule ADAE:
     input:
