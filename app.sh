@@ -1,0 +1,1 @@
+R -e 'shiny::runApp("./shiny_app/", port=8888, host="0.0.0.0")'
