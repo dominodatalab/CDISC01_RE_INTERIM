@@ -25,11 +25,11 @@
 *  08JUN2022   | Jake Tombeur   | Original version
 \*****************************************************************************/
 
-%let _STUDYID = H2QMCLZZT;
+%let _STUDYID = CDISC01;
 
 *********;
 ** Setup environment including libraries for this reporting effort;
-%include "!DOMINO_WORKING_DIR/config/domino.sas";
+%include "!DOMINO_WORKING_DIR/domino.sas";
 *********;
 
 %xpt2loc(filespec='/mnt/data/ADAM/adsl.xpt');
@@ -64,7 +64,7 @@ proc json out = "/mnt/artifacts/dominostats.json" pretty;
 run;
 
 /* Output results dataset */
-libname compare '/mnt/data/COMPARE';
+libname compare '/mnt/artifacts/COMPARE';
 data compare.summary;
 	set ___LIBALLCOMP;
 run;
