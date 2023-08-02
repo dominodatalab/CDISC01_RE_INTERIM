@@ -64,7 +64,7 @@ proc json out = "/mnt/artifacts/dominostats.json" pretty;
 run;
 
 /* Output results dataset */
-libname compare '/mnt/artifacts/COMPARE';
+libname compare '/mnt/data/COMPARE';
 data compare.summary;
 	set ___LIBALLCOMP;
 run;
