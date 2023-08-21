@@ -19,7 +19,7 @@
 *               
 * Macros:       tfl_metadata.sas
 *         
-* Assumptions: 
+* Assumptions: a
 *
 * ____________________________________________________________________________
 * PROGRAM HISTORY                                                         
@@ -341,7 +341,7 @@ run;
 
 ** create the table output;
 
-ods pdf file = "/mnt/artifacts/results/&__prog_name..pdf"
+ods pdf file = "/mnt/artifacts/TFL/&__prog_name..pdf"
         style = newstyle;
         
 ods noproctitle;
