@@ -1,4 +1,4 @@
-# Here is my comment
+# Here is my comment. Here is my second comment!
 # Load required libraries
 library(haven)
 library(dplyr)
