@@ -1,1 +1,1 @@
-snakemake --cores 1 --directory "/mnt/artifacts/" && snakemake --report '/mnt/artifacts/report.html' --directory '/mnt/artifacts/'
+snakemake --cores 1 -s 'pipelines/Snakefile' --directory "/mnt/artifacts/" && snakemake --report '/mnt/artifacts/report.html' --directory '/mnt/artifacts/'
