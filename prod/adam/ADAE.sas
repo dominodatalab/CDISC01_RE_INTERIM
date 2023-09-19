@@ -26,6 +26,7 @@
 * PROGRAM HISTORY
 *  10MAY2023  | Megan Harries  | Original
 *  19SEP2023  | Petter Olsson  | Added this comment
+*  19SEP2023  | Petter Olsson  | Added this comment as a second comment
 * ----------------------------------------------------------------------------
 \*****************************************************************************/
 
