@@ -22,7 +22,7 @@ DOMINO_USER_API_KEY = os.environ['DOMINO_USER_API_KEY']
 DOMINO_API_HOST = os.environ['DOMINO_API_HOST']
 DOMINO_PROJECT_ID = os.environ['DOMINO_PROJECT_ID']
 
-# These variables may not be set in the project, which we should interpret as a 'false' value
+# These variables may not be set in the project, which we should interpret as a 'false' valuefdsfdsfdsfsd
 try:
     CXRUN = os.environ['DMV_ISCX'].lower()
 except KeyError:
